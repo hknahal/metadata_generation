@@ -14,8 +14,8 @@ import copy
 import uuid
 
 #rootDir = "bam_headers"
-rootDir = "score-client_bam_headers"
-yamlsDir = "score-client_yamls"
+rootDir = "bam_headers"
+yamlsDir = "yamls"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-m', '-manifest', dest='manifest', required=True)
@@ -27,7 +27,7 @@ project = args.project
 specimen_type_regex = re.compile("tumour", re.IGNORECASE)
 
 log = open("sc_parse_yaml.log", "w")
-out = open("test_summaries/%s_header_summary.tsv"%project, "w")
+out = open("summaries/%s_header_summary.tsv"%project, "w")
 out.write("repo_code\tfile_id\tobject_id\tfile_format\tfile_name\tfile_size\tmd5_sum\tindex_object_id\tdonor_id/donor_count\tproject_id/project_count\tstudy\tbundle_id\tRead Group ID (RG)\tLibrary (LB)\tPlatform (PL)\tPlatform Model (PM)\tPlatform Unit (PU)\tPredicted Median Insert Size (PI)\tName of Sequencing Centre (CN)\tDate run was produced (DT)\n")
 
 valid_platform_models = ["CAPILLARY", "LS454", "ILLUMINA" , "SOLID", "HELICOS", "IONTORRENT", "ONT", "PACBIO"]
